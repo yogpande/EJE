@@ -1,0 +1,70 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="MasterPage, App_Web_goky2i3w" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="../css/style.css" type="text/css" media="all" />
+   <%--<link rel="stylesheet" href="../css/website.css" type="text/css" media="screen" />--%>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="page1">
+<form id="form1" runat="server">
+<asp:ScriptManager ID="ScriptManager1" runat="server">
+</asp:ScriptManager>
+    <div class="wrap">
+        <!-- header -->
+        <header>
+      <div class="container">
+         <h1><a href="../visitor/Default.aspx">EJE Portal</a></h1>
+         <nav>
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+         
+         </asp:ContentPlaceHolder>
+           
+         </nav>
+         <div id="search-form">
+            <fieldset>
+            <div class="rowElem1">
+            <iframe src="http://free.timeanddate.com/clock/i3w1vyjj/n1577/tlin/fn6/fc008cc4/tct/pct/ftb/tt0/tm1" frameborder="0" width="239" height="18" allowTransparency="true"></iframe>
+               </div>
+            
+            </fieldset>
+          </div>
+   </header>
+        <div class="container">
+            <section id="content">
+         <div id="slider1">
+		
+	    </div>
+         
+
+
+<div style="margin-top:20px;">
+<asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+        </div>
+        </section>
+        </div>
+        <!-- footer -->
+        <footer>
+   <div class="container">
+      <div class="inside" style="margin-top:50px;">
+         <div class="wrapper">
+            
+               <center>Copyright &copy; 2013 EJE Portal.com. All Rights Reserved.</center></div>
+         </div>
+      </div>
+    </div>
+    </footer>
+    </form>
+</body>
+</html>

@@ -1,0 +1,10 @@
+tblQuestionBank
+qid
+fksubid
+question
+opa
+opb
+opc
+opd
+ans
+

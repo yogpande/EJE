@@ -1,0 +1,200 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="MasterPage, App_Web_2dbdqjna" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="../css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="../css/website.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="../js/Myriad_Pro_300.font.js"></script>
+    <script type="text/javascript" src="../js/Myriad_Pro_400.font.js"></script>
+    <!--<script type="text/javascript" src="../js/script.js"></script>-->
+    <script type="text/javascript" src="../js/jquery.tinycarousel.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#slider1').tinycarousel();
+        });
+
+    </script>
+    <style type="text/css">
+        .member
+        {
+            border: 1px solid rgba(71, 94, 213, 0.53);
+            padding: 10px;
+            font-family: Verdana;
+            height: auto;
+            margin-left: 5px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px 10px 10px 10px;
+            box-shadow: 1px 3px 20px 1px rgba(71,94,213,0.53);
+        }
+        #rtr
+        {
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+      
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="page1">
+    <form id="form12" runat="server" method="post">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <div class="wrap">
+        <!-- header -->
+        <header>
+      <div class="container">
+         <h1><a href="Home.aspx">EJE Portal</a></h1>
+         <nav>
+            <asp:ContentPlaceHolder ID="menu" runat="server"></asp:ContentPlaceHolder>
+         </nav>
+         
+         
+         
+         <div id="search-form">
+            <fieldset>
+            <div class="rowElem1">
+            <iframe src="http://free.timeanddate.com/clock/i3w1vyjj/n1577/tlin/fn6/fc008cc4/tct/pct/ftb/tt0/tm1" frameborder="0" width="239" height="18" allowTransparency="true"></iframe>
+               </div>
+               <%--<div class="rowElem">
+               <input type="text" />
+               <a href="#" onclick="document.getElementById('search-form').submit()">Search</a></div>--%>
+            </fieldset>
+         </div>
+      </div>
+   </header>
+        <div class="container">
+            <!-- aside -->
+            <aside>
+       <h3>Top <span>Colleges</span></h3>
+       <div id="rtr">
+       <marquee behaviour="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+       <img src="../images/cbs-oct-159x96.gif" />
+        <img src="../images/isbm-june-159x96.gif" />
+        <img src="../images/isbm-oct-159x96.gif" /> <img src="../images/cbs-oct-159x96.gif" />
+        <img src="../images/isbm-june-159x96.gif" />
+        <img src="../images/isbm-oct-159x96.gif" />
+       </marquee>
+       </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+           
+          
+          </asp:ContentPlaceHolder>
+            <br /><br />
+            <div>
+             <h2>Fresh <span>News</span></h2>
+                   
+        <div style="width: 180px; height:400px; margin-top:-20px; background-color:White; padding:5px;">
+           <marquee behaviour="scroll" direction="up" Height="400" scrolldelay="150" onmouseover="this.stop();" onmouseout="this.start();">
+               <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="http://zeenews.india.com/rss/india-national-news.xml"
+                    XPath="rss/channel/item [position()<=10]" CacheDuration="30"></asp:XmlDataSource>
+          
+                    <asp:DataList ID="DataList1" runat="server" DataSourceID="XmlDataSource1" BorderColor="gray"
+                         BorderWidth="0px" CellPadding="10" >
+                        <ItemTemplate>
+                            <br />
+                            <br />
+                            <%--http://campustechnology.com/rss-feeds/all-articles.aspx --%>
+                            <b>
+                                <%#XPath("title") %></b>&nbsp; <a href="<%# XPath("link") %>" 
+                                style="font-size: large; color: #800000">
+                                    <asp:HyperLink ID="HyperLink1" runat="server" Text="[Read More...]" NavigateUrl='<%# XPath("link") %>'
+                                        Target="_blank" Font-Names="Verdana" Font-Size="10px" ToolTip='<%#XPath("title") %>'></asp:HyperLink></a>
+                            <br />
+                            <asp:Label ID="Label1" runat="server" Text='<%# XPath("pubDate") %>' ForeColor="black"
+                                Font-Bold="false" Font-Names="Tahoma" Font-Size="11px"></asp:Label>
+                            <br />
+                            <span>
+                                <%# XPath("description") %></span><br />
+                        </ItemTemplate>
+                        <AlternatingItemTemplate>
+                            <br />
+                            <br />
+                            <b>
+                                <%#XPath("title") %></b> &nbsp;<asp:HyperLink ID="HyperLink2" runat="server" Text="[Read More...]"
+                                    NavigateUrl='<%# XPath("link") %>' Target="_blank" Font-Names="Verdana" Font-Size="10px"
+                                     ToolTip='<%#XPath("title") %>'></asp:HyperLink><br />
+                            <asp:Label ID="Label3" runat="server" Text='<%# XPath("pubDate") %>' ForeColor="black"
+                                Font-Bold="false" Font-Names="Tahoma" Font-Size="11px"></asp:Label><br />
+                            <span>
+                                <%# XPath("description") %></span>
+                          <br />
+                        </AlternatingItemTemplate>
+                        <ItemStyle Font-Names="verdana" Font-Size="12px" BackColor="Transparent" ForeColor="black"
+                            HorizontalAlign="Justify"></ItemStyle>
+                        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                        <SelectedItemStyle BackColor="#009999" Font-Bold="True" ForeColor="Maroon" />
+                        <HeaderStyle Font-Bold="True" BackColor="#003399" ForeColor="#CCCCFF" />
+                    </asp:DataList>
+               </marquee>
+            </div>
+        </div>
+       <%--  <ul class="news">
+            <li><strong>November 10, 2013</strong>
+               <h4><a href="#">Sed ut perspiciatis unde</a></h4>
+               Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque. </li>
+            <li><strong>June 14, 2013</strong>
+               <h4><a href="#">Neque porro quisquam est</a></h4>
+               Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit consequuntur magni. </li>
+            <li><strong>May 29, 2013</strong>
+               <h4><a href="#">Minima veniam, quis nostrum</a></h4>
+               Uis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae. </li>                           
+               </ul>
+--%>
+       
+          
+      </aside>
+            <!-- content -->
+            <section id="content">
+         <div id="slider1">
+		<a class="buttons prev" href="#">left</a>
+		<div class="viewport">
+			<ul class="overview">
+                <li><img src="../images/55.jpg" style="width: 550px; height: 240px;"/></li>                
+                <li><img src="../images/44.jpg" style="width: 550px; height:240px;"/></li>
+				<li><img src="../images/22.jpg" style="width: 550px; height: 240px;"/></li>
+				<li><img src="../images/33.jpg" style="width: 550px; height: 240px;"/></li>
+				<li><img src="../images/11.jpg" style="width: 550px; height: 240px;"/></li>									
+				<li><img src="../images/66.jpg" style="width: 550px; height: 240px;"/></li>
+				<li><img src="../images/77.jpg" style="width: 550px; height: 240px;"/></li>									
+			</ul>
+		</div>
+		<a class="buttons next" href="#">right</a>
+	</div>
+         
+
+
+
+ 
+<div style="margin-top:20px;">
+<asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+
+</asp:ContentPlaceHolder>
+         </div>
+             <div id="part">
+             <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+               
+              </asp:ContentPlaceHolder>
+         </div>
+            
+      </section>
+        </div>
+        <!-- footer -->
+        <footer>
+   <div class="container">
+      <div class="inside" style="margin-top:50px;">
+         <div class="wrapper">
+            
+               <center>Copyright &copy; 2013 EJE Portal.com. All Rights Reserved.</center></div>
+         </div>
+      </div>
+    </div>
+    </footer>
+    </form>
+</body>
+</html>
