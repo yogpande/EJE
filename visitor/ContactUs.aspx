@@ -20,7 +20,7 @@
         <h2>
             Our <span>Contacts</span></h2>
         <div class="address">
-            <strong>Tops Technologies</storng><br />
+            <strong>Yogesh Pande</storng><br />
                 <address>
                     <p>
                         Yogesh Pande</p>
