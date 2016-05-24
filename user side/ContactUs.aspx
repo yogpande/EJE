@@ -7,17 +7,13 @@
         <h2>
             Our <span>Contacts</span></h2>
         <div class="address">
-            <strong>Tops Technologies</storng><br />
+            <strong>Yogesh Pande</storng><br />
                 <address>
                     <p>
-                        4th Floor Amruta Arcade,Nr Maninagar Station,Ahmedabad, GUJARAT-380008
-                        <br />
-                        Mobile:099 74 863333</p>
+                       Yogesh Pande</p>
                 </address>
                 <div class="extra-wrap">
-                    <iframe width="400" height="200" frameborder="0" scrolling="no" marginheight="0"
-                        marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Tops+Technologies,+Maninagar,+Ahmedabad,+Gujarat&amp;aq=0&amp;oq=tops+maninagar&amp;sll=23.020346,72.579743&amp;sspn=0.391185,0.441513&amp;ie=UTF8&amp;hq=Tops+Technologies,&amp;hnear=Maninagar,+Ahmedabad,+Gujarat&amp;ll=22.997617,72.610058&amp;spn=0.007005,0.008386&amp;t=m&amp;output=embed">
-                    </iframe>
+                   
                 </div>
         </div>
         <h2>
