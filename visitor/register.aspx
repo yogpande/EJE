@@ -327,7 +327,7 @@
                     <br />
                 </td>
             </tr>
-          <!--  <tr>
+        <tr>
                 <td>
                     Upload Resume:
                 </td>
@@ -342,7 +342,7 @@
                 <td>
                     <asp:FileUpload ID="Pimage" runat="server" />
                 </td>
-            </tr> -->
+            </tr>
         </table>
     </fieldset>
     <fieldset class="cls">
